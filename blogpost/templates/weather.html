@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Météo Rennes</title>
+</head>
+<body>
+    <h1>Météo Rennes</h1>
+    <table>
+        <tr>
+            <th>Jour</th>
+            <th>Date et heure</th>
+            <th>Température minimale (°C)</th>
+            <th>Température maximale (°C)</th>
+            <th>Vitesse du vent (km/h)</th>
+            <th>Direction du vent (°)</th>
+            <th>Précipitation (10 min) (mm)</th>
+            <th>Probabilité de pluie (%)</th>
+        </tr>
+        {% for forecast in forecasts %}
+        <tr>
+            <td>Jour {{ forecast.day }}</td>
+            <td>{{ forecast.datetime }}</td>
+            <td>{{ forecast.tmin }}</td>
+            <td>{{ forecast.tmax }}</td>
+            <td>{{ forecast.wind10m }}</td>
+            <td>{{ forecast.dirwind10m }}</td>
+            <td>{{ forecast.rr10 }}</td>
+            <td>{{ forecast.probarain }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
